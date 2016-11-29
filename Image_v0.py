@@ -9,10 +9,15 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.metrics import accuracy_score
 
-oxford_train = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\training\oxford.csv")
-profile_train = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\training\profile\profile.csv")
+oxford_train = (r"Project_User_Profiling\tcss555\training\oxford.csv")
+profile_train = (r"Project_User_Profiling\tcss555\training\profile\profile.csv")
 profile_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\profile\profile.csv")
 oxford_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\oxford.csv")
+#
+#oxford_train = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\training\oxford.csv")
+#profile_train = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\training\profile\profile.csv")
+#profile_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\profile\profile.csv")
+#oxford_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\oxford.csv")
 
 def performLogisticRegression(df_train_oxford,df_test_oxford,key_var,model):
     
