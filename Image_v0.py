@@ -9,11 +9,12 @@ import pandas as pd
 from sklearn import linear_model
 from sklearn.metrics import accuracy_score
 
-oxford_train = (r"Project_User_Profiling\tcss555\training\oxford.csv")
-profile_train = (r"Project_User_Profiling\tcss555\training\profile\profile.csv")
-profile_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\profile\profile.csv")
-oxford_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\oxford.csv")
-#
+
+oxford_train = ("/data/training/oxford.csv")
+profile_train = ("/data/training/profile/profile.csv")
+#profile_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\profile\profile.csv")
+#oxford_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\oxford.csv")
+##
 #oxford_train = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\training\oxford.csv")
 #profile_train = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\training\profile\profile.csv")
 #profile_test = (r"D:\MCSS\MachineLearning\Project_User_Profiling\tcss555\public-test-data\profile\profile.csv")
@@ -103,16 +104,20 @@ def AgeGroupProfiling(df_train_oxford, df_test_oxford, df_train_profiles, df_tes
         
 df_train_oxford = pd.read_csv(oxford_train)
 df_train_profiles = pd.read_csv(profile_train)
-
-df_test_profiles = pd.read_csv(profile_test)
-df_test_oxford = pd.read_csv(oxford_test)
+#
+#df_test_profiles = pd.read_csv(profile_test)
+#df_test_oxford = pd.read_csv(oxford_test)
 
 df_train_profiles.columns = [x.lower() for x in df_train_profiles.columns]
 df_train_oxford.columns = [x.lower() for x in df_train_oxford.columns]
-df_test_profiles.columns = [x.lower() for x in df_test_profiles.columns]
-df_test_oxford.columns = [x.lower() for x in df_test_oxford.columns]
+#df_test_profiles.columns = [x.lower() for x in df_test_profiles.columns]
+#df_test_oxford.columns = [x.lower() for x in df_test_oxford.columns]
 
-GenderProfiling(df_train_oxford.copy(deep=True), df_test_oxford.copy(deep=True), df_train_profiles.copy(deep=True), df_test_profiles.copy(deep=True))
-AgeGroupProfiling(df_train_oxford, df_test_oxford, df_train_profiles, df_test_profiles)
+
+GenderProfiling(df_train_oxford.copy(deep=True), df_train_profiles.copy(deep=True))
+AgeGroupProfiling(df_train_oxford, df_train_profiles)
+
+#GenderProfiling(df_train_oxford.copy(deep=True), df_test_oxford.copy(deep=True), df_train_profiles.copy(deep=True), df_test_profiles.copy(deep=True))
+#AgeGroupProfiling(df_train_oxford, df_test_oxford, df_train_profiles, df_test_profiles)
 
 print("End of Program.") 
